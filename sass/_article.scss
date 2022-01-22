@@ -1,0 +1,75 @@
+.article {
+    @include for-phone-only {
+        width: 90%;
+    }
+    width: 80%;
+    margin: 0 auto 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &__title {
+        background-color: $light-grey;
+        text-align: center;
+        padding: 20px;
+    }
+
+    &__h1 {
+        font-size: 22px;
+        color: $dark-grey;
+        letter-spacing: 1px;
+        @extend %half-margin-top, %default-margin-bottom, %no-margin-left, %no-margin-right;
+    }
+
+    .breadcrumb {
+        @include flx(justify-content, center);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__link {
+            font-size: 12px;
+            text-decoration: none;
+            color: $dark-grey;
+
+            &:hover{
+                text-decoration: underline;
+                color: $purple;
+            }
+        }
+
+        &__img {
+            width: 10px;
+            margin: 8px;
+        }
+    }
+
+    &__img {
+        @extend %double-margin-bottom;
+        width: 100%;
+    }
+
+    &__details {
+        @include flx(justify-content, center);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__date {
+        @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right;
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    &__tag {
+        font-size: 14px;
+        padding: 5px 7px;
+        color: $purple;
+        border: 1px solid $purple;
+    }
+
+    &__content {
+        font-weight: 100;
+        font-size: 14px;
+        color: $dark-grey;
+        padding: 10px 20px;
+    }
+}
